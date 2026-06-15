@@ -299,7 +299,6 @@ public class UtilityShowData{
         JPanel searchPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         searchPanel.setBorder(BorderFactory.createTitledBorder("Search Coach"));
 
-        //Create search and refresh buttons
         JTextField textField = new JTextField(20);
         searchPanel.add(textField);
         JButton searchButton = Utility.AddButton(searchPanel, "Search", Color.GRAY, Color.black, 14);
@@ -599,7 +598,6 @@ public class UtilityShowData{
     public static void LoadReportData(DefaultTableModel model) {
         model.setRowCount(0);
         
-        // 🛠️ ফিক্স: কুয়েরি থেকে coach টেবিলের JOIN এবং c.coach_name বাদ দেওয়া হয়েছে
         String query = "SELECT r.market_value, r.prospect, s.scout_name, p.player_name " +
                     "FROM report r " +
                     "LEFT JOIN scout s ON r.scout_id = s.scout_id " +
@@ -612,7 +610,6 @@ public class UtilityShowData{
             while (rs.next()) {
                 String playerName = rs.getString("player_name");
                 
-                // 🛠️ ফিক্স: টেবিল রো থেকে কোচের ডাটা (coachName) বাদ দেওয়া হয়েছে
                 model.addRow(new Object[]{
                     rs.getString("market_value"),
                     rs.getString("prospect"),

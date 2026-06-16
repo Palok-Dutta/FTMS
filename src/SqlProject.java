@@ -1,6 +1,5 @@
 import javax.swing.*;
 import java.awt.*;
-
 public class SqlProject extends JFrame{
     String url = "";
     String user = "";
@@ -120,34 +119,101 @@ public class SqlProject extends JFrame{
         rightMainPanel.add(UtilityShowData.CreateCoachTransferPanel(), "CoachTransferPage");
         rightMainPanel.add(UtilityShowData.CreateReportsPanel(), "ReportsPage");
 
-        btnDashboard.addActionListener(e -> cardLayout.show(rightMainPanel, "DashboardPage"));
-        btnClubList.addActionListener(e -> cardLayout.show(rightMainPanel, "ClubListPage"));
+        btnDashboard.addActionListener(e -> {
+            rightMainPanel.removeAll();
+            rightMainPanel.add(UtilityShowData.CreateDashboardPanel(), "DashboardPage");
+            cardLayout.show(rightMainPanel, "DashboardPage");
+            rightMainPanel.revalidate();
+            rightMainPanel.repaint();
+        });
+
+        btnClubList.addActionListener(e -> {
+            rightMainPanel.removeAll();
+            rightMainPanel.add(UtilityShowData.CreateClubListPanel(), "ClubListPage");
+            cardLayout.show(rightMainPanel, "ClubListPage");
+            rightMainPanel.revalidate();
+            rightMainPanel.repaint();
+        });
+
         btnPlayerList.addActionListener(e -> {
-            for (java.awt.Component comp : rightMainPanel.getComponents()) {
-                if (comp.getName() != null && comp.getName().equals("PlayerListPage")) {
-                    rightMainPanel.remove(comp);
-                }
-            }
+            rightMainPanel.removeAll();
             rightMainPanel.add(UtilityShowData.CreatePlayerListPanel(), "PlayerListPage");
             cardLayout.show(rightMainPanel, "PlayerListPage");
+            rightMainPanel.revalidate();
+            rightMainPanel.repaint();
         });
+
         btnCoachList.addActionListener(e -> {
-            for (java.awt.Component comp : rightMainPanel.getComponents()) {
-                if (comp.getName() != null && comp.getName().equals("CoachListPage")) {
-                    rightMainPanel.remove(comp);
-                }
-            }
+            rightMainPanel.removeAll();
             rightMainPanel.add(UtilityShowData.CreateCoachListPanel(), "CoachListPage");
             cardLayout.show(rightMainPanel, "CoachListPage");
+            rightMainPanel.revalidate();
+            rightMainPanel.repaint();
         });
-        btnAgentList.addActionListener(e -> cardLayout.show(rightMainPanel, "AgentListPage"));
-        btnScoutList.addActionListener(e -> cardLayout.show(rightMainPanel, "ScoutListPage"));
-        btnSearchPlayer.addActionListener(e -> cardLayout.show(rightMainPanel, "SearchPlayerPage"));
-        btnSearchCoach.addActionListener(e -> cardLayout.show(rightMainPanel, "SearchCoachPage"));
-        btnSearchClub.addActionListener(e -> cardLayout.show(rightMainPanel, "SearchClubPage"));
-        btnPlayerTransfer.addActionListener(e -> cardLayout.show(rightMainPanel, "PlayerTransferPage"));
-        btnCoachTransfer.addActionListener(e -> cardLayout.show(rightMainPanel, "CoachTransferPage"));
-        btnReports.addActionListener(e -> cardLayout.show(rightMainPanel, "ReportsPage"));
+
+        btnAgentList.addActionListener(e -> {
+            rightMainPanel.removeAll();
+            rightMainPanel.add(UtilityShowData.CreateAgentListPanel(), "AgentListPage");
+            cardLayout.show(rightMainPanel, "AgentListPage");
+            rightMainPanel.revalidate();
+            rightMainPanel.repaint();
+        });
+
+        btnScoutList.addActionListener(e -> {
+            rightMainPanel.removeAll();
+            rightMainPanel.add(UtilityShowData.CreateScoutListPanel(), "ScoutListPage");
+            cardLayout.show(rightMainPanel, "ScoutListPage");
+            rightMainPanel.revalidate();
+            rightMainPanel.repaint();
+        });
+
+        btnSearchPlayer.addActionListener(e -> {
+            rightMainPanel.removeAll();
+            rightMainPanel.add(UtilityShowData.CreateSearchPlayerPanel(), "SearchPlayerPage");
+            cardLayout.show(rightMainPanel, "SearchPlayerPage");
+            rightMainPanel.revalidate();
+            rightMainPanel.repaint();
+        });
+
+        btnSearchCoach.addActionListener(e -> {
+            rightMainPanel.removeAll();
+            rightMainPanel.add(UtilityShowData.CreateSearchCoachPanel(), "SearchCoachPage");
+            cardLayout.show(rightMainPanel, "SearchCoachPage");
+            rightMainPanel.revalidate();
+            rightMainPanel.repaint();
+        });
+
+        btnSearchClub.addActionListener(e -> {
+            rightMainPanel.removeAll();
+            rightMainPanel.add(UtilityShowData.CreateSearchClubPanel(), "SearchClubPage");
+            cardLayout.show(rightMainPanel, "SearchClubPage");
+            rightMainPanel.revalidate();
+            rightMainPanel.repaint();
+        });
+
+        btnPlayerTransfer.addActionListener(e -> {
+            rightMainPanel.removeAll();
+            rightMainPanel.add(UtilityShowData.CreatePlayerTransferPanel(), "PlayerTransferPage");
+            cardLayout.show(rightMainPanel, "PlayerTransferPage");
+            rightMainPanel.revalidate();
+            rightMainPanel.repaint();
+        });
+
+        btnCoachTransfer.addActionListener(e -> {
+            rightMainPanel.removeAll();
+            rightMainPanel.add(UtilityShowData.CreateCoachTransferPanel(), "CoachTransferPage");
+            cardLayout.show(rightMainPanel, "CoachTransferPage");
+            rightMainPanel.revalidate();
+            rightMainPanel.repaint();
+        });
+
+        btnReports.addActionListener(e -> {
+            rightMainPanel.removeAll();
+            rightMainPanel.add(UtilityShowData.CreateReportsPanel(), "ReportsPage");
+            cardLayout.show(rightMainPanel, "ReportsPage");
+            rightMainPanel.revalidate();
+            rightMainPanel.repaint();
+        });
 
         add(rightMainPanel, BorderLayout.CENTER);
     }

@@ -29,7 +29,9 @@ public class UtilityShowData{
         cardsPanel.add(Utility.CreateCard("Total Coaches",   Utility.GetCount("SELECT COUNT(*) FROM coach"),         new Color(253, 126, 20)));
         cardsPanel.add(Utility.CreateCard("Total Agents",    Utility.GetCount("SELECT COUNT(*) FROM agent"),         new Color(111, 66, 193)));
         cardsPanel.add(Utility.CreateCard("Total Scouts",    Utility.GetCount("SELECT COUNT(*) FROM scout"),         new Color(23, 162, 184)));
-        cardsPanel.add(Utility.CreateCard("Total Transfers", Utility.GetCount("SELECT COUNT(*) FROM player_transfer"), new Color(220, 53, 69)));
+        cardsPanel.add(Utility.CreateCard("Total Transfers", Utility.GetCount("SELECT (SELECT COUNT(*) FROM player_transfer) +" +
+                                                                                "(SELECT COUNT(*) FROM coach_transfer) AS total_count"), 
+                                                                                new Color(220, 53, 69)));
 
         panel.add(cardsPanel, BorderLayout.CENTER);
         return panel;

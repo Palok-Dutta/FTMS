@@ -32,8 +32,8 @@ public class SqlProject extends JFrame{
         sidebar.add(btnDashboard);
 
         // Lists group
-        JButton btnListGroup = Utility.CreateSidebarButton("  Lists  ", true);
-        JPanel listChildren = Utility.CreateChildPanel();
+        JButton btnListGroup  = Utility.CreateSidebarButton("  Lists  ", true);
+        JPanel listChildren   = Utility.CreateChildPanel();
         JButton btnClubList   = Utility.CreateChildButton("Club List");
         JButton btnPlayerList = Utility.CreateChildButton("Player List");
         JButton btnCoachList  = Utility.CreateChildButton("Coach List");

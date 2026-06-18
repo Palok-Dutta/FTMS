@@ -48,8 +48,8 @@ public class SqlProject extends JFrame{
         sidebar.add(listChildren);
 
         // Search group
-        JButton btnSearchGroup = Utility.CreateSidebarButton("  Search  ", true);
-        JPanel searchChildren = Utility.CreateChildPanel();
+        JButton btnSearchGroup  = Utility.CreateSidebarButton("  Search  ", true);
+        JPanel searchChildren   = Utility.CreateChildPanel();
         JButton btnSearchPlayer = Utility.CreateChildButton("Search Player");
         JButton btnSearchCoach  = Utility.CreateChildButton("Search Coach");
         JButton btnSearchClub   = Utility.CreateChildButton("Search Club");
@@ -60,8 +60,8 @@ public class SqlProject extends JFrame{
         sidebar.add(searchChildren);
 
         // Transfers group
-        JButton btnTransferGroup = Utility.CreateSidebarButton("  Transfers  ", true);
-        JPanel transferChildren = Utility.CreateChildPanel();
+        JButton btnTransferGroup  = Utility.CreateSidebarButton("  Transfers  ", true);
+        JPanel transferChildren   = Utility.CreateChildPanel();
         JButton btnPlayerTransfer = Utility.CreateChildButton("Player Transfer");
         JButton btnCoachTransfer  = Utility.CreateChildButton("Coach Transfer");
         transferChildren.add(btnPlayerTransfer);

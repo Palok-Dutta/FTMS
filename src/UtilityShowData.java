@@ -453,7 +453,7 @@ public class UtilityShowData{
     private static void AddReport(JPanel panel, DefaultTableModel model,
         String marketValue, String prospect, JComboBox<String> cbScout, JComboBox<String> cbPlayer) {
 
-        String query = "INSERT INTO report (market_value, prospect, scout_id, player_id, coach_id) VALUES (?, ?, ?, ?, ?)";
+        String query = "INSERT INTO report (market_value, prospect, scout_id, player_id) VALUES (?, ?, ?, ?)";
 
         try (Connection conn = DBConnection.getConnection();
             PreparedStatement pstmt = conn.prepareStatement(query)) {
